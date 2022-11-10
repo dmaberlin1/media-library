@@ -11,11 +11,12 @@
 }
 
 .header h1 {
-    color: #181818;
-    font-size: 24px;
-    letter-spacing: 0.1rem;
+    color: #a8b0c5;
+    font-size: 40px;
+    letter-spacing: 2rem;
     text-transform: uppercase;
     font-weight: 800;
+    padding-left: 30px;
 }
 .header  p {
     color: #7b7b7b;

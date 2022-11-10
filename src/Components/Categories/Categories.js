@@ -1,33 +1,39 @@
 import React, {useState} from 'react';
+import styles from './Categories.module.css'
 
-const categiresData=[
+
+const categoriesData=[
     {index:0,title:'Books'},
     {index:1,title:'Films'},
     {index:2,title:'Music'}
 ]
 
 
-const Categories = () => {
+const Categories = ({setIndex}) => {
 
     const [activeIndex, setActiveIndex] = useState(0);
     const activeIndexHandler=(value)=>{
         setActiveIndex(value)
+        setIndex(value)
     }
 
-    const resultCategories=[categiresData.map((category)=>{
+    const resultCategories=[categoriesData.map((category)=>{
+
         return (
           <li
           key={category.index}
           onClick={()=>activeIndexHandler(category.index)}
-          className={activeIndex===category.index ? 'active':''}
+          className={activeIndex===category.index ? styles.active:''}
           >
               {category.title}
           </li>
+
         )
+
     })]
 
     return (
-      <div className={'categories'}>
+      <div className={styles.categories}>
 <ul>
     {resultCategories}
 </ul>

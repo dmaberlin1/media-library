@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {useState} from "react";
+import PostForm from "./Components/PostForm/PostForm";
+import Header from "./Components/Header/Header";
 
 function App() {
+
+  const [postsBooks, setPostsBooks] = useState({title:'',author:'',description:''});
+
+  const [postsFilms, setPostsFilms] = useState({title: '', castList: '', duration: '', description: ''});
+  const [postsMusic, setPostsMusic] = useState({title:'',author:'',duration:'',description:''});
+
+  const [index, setIndex] = useState(0);
+
+  const createPostBooks=(newPostBook)=>{
+    setPostsBooks([...postsBooks,newPostBook])
+  }
+
+  const createPostFilms=(newPostFilm)=>{
+    setPostsFilms([...postsFilms,newPostFilm])
+  }
+
+  const createPostMusic=(newPostMusic)=>{
+    setPostsMusic([...postsMusic,newPostMusic])
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header setIndex={setIndex}></Header>
+      <PostForm createPostBooks={createPostBooks} createPostMusic={createPostMusic} createPostFilms={createPostFilms} index={index}></PostForm>
     </div>
   );
 }
