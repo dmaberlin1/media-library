@@ -1,0 +1,23 @@
+.input{
+    width: 100%;
+    padding: 6px 15px;
+    color: cadetblue;;
+    text-align: center;
+    /*background-color: rgba(15, 44, 60, 0.8);*/
+    background: transparent;
+    margin: 5px;
+    border: 1px solid teal;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 22px;
+
+}
+input::placeholder{
+    color: rgba(85, 120, 124, 0.7);;
+}
+.input:focus{
+
+    color: #55787c;;
+
+    background-color: rgba(95, 158, 160, 0.4);
+}
